@@ -1,0 +1,100 @@
+{% load static%}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dear Diary</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .hero-is-primary{
+            z-index: 2;
+        }
+        .title{
+            position: absolute;
+            top: 50px;
+            left: 60px;
+            color: white;
+        }
+        .control{
+            position: absolute;
+            top: 120px;
+            left: 80px;
+        }
+        .control2{
+            position: absolute;
+            bottom: 10px;
+            right: 80px;
+        }
+        button {
+            background-color: #eee;
+            border: none;
+            padding: 1rem;
+            font-size: 1rem;
+            width: 10em;
+            border-radius: 1rem;
+            color: lightcoral;
+            box-shadow: 0 0.4rem #dfd9d9;
+            cursor: pointer;
+            font-weight:700;
+           }
+           
+           button:active {
+            color: white;
+            box-shadow: 0 0.2rem #dfd9d9;
+            transform: translateY(0.2rem);
+           }
+           
+           button:hover:not(:disabled) {
+            background: lightcoral;
+            color: white;
+            text-shadow: 0 0.1rem #bcb4b4;
+           }
+           
+           button:disabled {
+            cursor: auto;
+            color: grey;
+           }
+    </style>
+</head>
+
+<body>
+    <section class="hero-is-primary">
+        <img src="{% static 'add2.jpg' %}" style="width:100%;height:100%">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Dear Diary
+                </h1>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+
+        <form method="POST" action="{% url 'add' %}">
+                {% csrf_token %}
+                <div class="field">
+                    <div class="control">
+                        {{ form.text }}
+                    </div>
+                </div>
+
+                <div class="field is-grouped is-grouped-right">
+                    <div class="control2">
+                        <button class="button is-link">Submit</button>
+                    </div>
+                </div>
+        </form>
+        </div>
+
+    </section>
+    <footer class="footer">
+    </footer>
+</body>
+
+</html>

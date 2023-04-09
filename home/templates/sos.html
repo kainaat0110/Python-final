@@ -1,0 +1,52 @@
+{% load static%}
+<html>
+  <head>
+    <title>Google Form</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'sos.css'%}">
+  </head>
+  <body>
+    <div class="bg">
+    <div class="form-box">
+      <h1>My Safety Plan</h1>
+      <form>
+        <div class="anch">
+        <label for="anchor">Life Anchors</label>
+        </div>
+        <div class="text">
+        <textarea placeholder="Things that give me hope and meaning."id="anchor" name="anchor" required></textarea>
+        
+        </div>   
+        <div class="place">
+        <label for="place">Friendly Places</label>
+        </div>
+        <div class="text2">  
+        <textarea placeholder="Places that make me feel better and safe." id="place" name="place" required></textarea>
+     
+        </div>    
+        <div class="network">
+        <label for="network">Support Network</label>
+        </div>
+        <div class="text3">
+        <textarea placeholder="People I can call for help and who make me feel safe." id="network" name="network" required></textarea>
+        </div>   
+        <div class="signs">
+            <label for="signs">Warning Signs</label>
+            </div>
+            <div class="text4">
+            <textarea placeholder="Things make me feel overwhelm." id="signs" name="signs" required></textarea>
+            </div>   
+            <div class="activities">
+                <label for="activities">Calming Activities</label>
+                </div>
+                <div class="text5">
+                <textarea placeholder="Activities that I can do by myself to feel comforted and calm." id="activities" name="activities" required></textarea>
+                </div>   
+        <div class="button">
+        <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+</div>
+
+  </body>
+</html>

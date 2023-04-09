@@ -1,0 +1,85 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dear Diary</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .hero-is-primary{
+            z-index: 2;
+            margin-bottom:-100px;
+
+        }
+        .title{
+            position: relative;
+            bottom:140px;
+            left: 40px;
+            color:black;
+            font-size: 35px;
+        }
+        .content2{
+            position: absolute;
+            top:-170px;
+            right: 80px;
+            text-decoration: none;
+            z-index: 2;
+        }
+        
+    </style>
+
+</head>
+
+<body>
+    <section class="hero-is-primary">
+        <img src="{% static 'diaryhead.jpg' %}" style="width:100%;height:30%">
+
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Dear Diary
+                </h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+
+            <article class="media">
+                <div class="media-content">
+                    <div class="content2">
+                        <a href="add.html">Add new entry</a>
+                    </div>
+                </div>
+            </article>
+
+
+            {% for Diary_entry in entries %}
+                <article class="media">
+                    <div class="media-content">
+                        <div class="content">
+                            <p>
+                                <strong>{{ Diary_entry.date_posted }}</strong>
+                                <br> {{ Diary_entry.text }}
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            {% endfor %}
+
+        </div>
+
+    </section>
+    <footer class="footer">
+    </footer>
+</body>
+
+</html>
